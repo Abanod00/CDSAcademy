@@ -46,11 +46,7 @@ public class RegisterLoginController {
 	@RequestMapping(value = "/registerPerson", method = RequestMethod.POST)
 	public String registerPerson(@ModelAttribute("person") Person p, Model model) {
 		logger.info("person: " + p);
-	
-		if(!p.getPassword().equals(p.getRepeatpassword())) {
-			return "redirect:/";
-		}
-		
+
 		this.personService.addPerson(p);
 		return "redirect:/";
 	}

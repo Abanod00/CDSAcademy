@@ -70,10 +70,6 @@
 					<input id="password" type="password" class="input" data-type="password" name="password">
 				</div>
 				<div class="group">
-					<label for="repeatpassword" class="label">Repeat Password</label>
-					<input id="repeatpassword" type="password" class="input" data-type="repeatpassword" name="repeatpassword">
-				</div>
-				<div class="group">
 					<input type="submit" class="button" value="Resgister">
 				</div>
 				<div class="hr"></div>
