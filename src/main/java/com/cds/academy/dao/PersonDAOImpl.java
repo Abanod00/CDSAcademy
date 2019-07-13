@@ -83,18 +83,6 @@ public class PersonDAOImpl implements PersonDAO {
 			logger.info("Intentando recuperar " + email + " " + password + " FAIL");
 		}
 
-		try {
-			String query = "from Person where alias = '" + email + "' AND password = '" + password + "'";
-			logger.info(query);
-			List<Person> person = session.createQuery(query).list();
-
-			return person.get(0);
-			
-		} catch (Exception e) {
-			logger.info("Intentando recuperar " + email + " " + password + " FAIL");
-		}
-		
-		
 		return null;
 	}
 	

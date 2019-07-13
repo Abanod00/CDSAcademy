@@ -1,8 +1,5 @@
 package com.cds.academy;
 
-import java.util.Collections;
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.cds.academy.model.Message;
-import com.cds.academy.model.MessageComparator;
 import com.cds.academy.service.MessageService;
 import com.cds.academy.service.PersonService;
 
@@ -51,13 +47,9 @@ public class MessageController {
 	@RequestMapping(value = "/allMessages/{id}", method = RequestMethod.GET)
 	public String allMessagesWithID(@PathVariable("id") int id, Model model) {
 		
-		List<Message> reverse = this.messageService.listMessage();
-		Collections.sort(reverse, new MessageComparator());
-		
-		
 		model.addAttribute("messages", new Message());
 		model.addAttribute("personLogin", this.personService.getPersonById(id));
-		model.addAttribute("listMessages",reverse);
+		model.addAttribute("listMessages",this.messageService.listMessage());
 		model.addAttribute("listRandomPersons", this.personService.randListPersons());
 		return "messages";
 	}

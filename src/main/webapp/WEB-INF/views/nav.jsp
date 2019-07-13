@@ -16,7 +16,7 @@
 			<li class="nav-item active"><a class="nav-link" href="#">Dashboard<span
 					class="sr-only">(current)</span></a></li>
 			<li class="nav-item"><a class="nav-link"
-				href="${contextPath}/allTopics?idLog=${personLogin.id}">Topics</a></li>
+				href="#">Topics</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
 			<li class="nav-item"><a class="nav-link"
 				href="${contextPath}/myMessages/${personLogin.id}">My messages</a></li>
